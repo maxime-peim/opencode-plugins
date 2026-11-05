@@ -1,0 +1,45 @@
+{
+  "name": "oc-openai-daybreak",
+  "version": "0.1.0",
+  "description": "Per-session OpenAI Daybreak controls for OpenCode V2",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maxime-peim/opencode-plugins.git",
+    "directory": "packages/openai-daybreak"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tui": {
+      "types": "./dist/tui.d.ts",
+      "import": "./dist/tui.js"
+    },
+    "./rpc": {
+      "types": "./dist/rpc.d.ts",
+      "import": "./dist/rpc.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "test": "tsx --test test/*.test.ts",
+    "test:smoke": "npm run build && node test/smoke.mjs",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@opencode/plugin": "~2.2.5"
+  }
+}
