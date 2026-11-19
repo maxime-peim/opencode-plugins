@@ -6,9 +6,10 @@ repository root is private development tooling, **not an installable plugin**.
 
 ## Plugins
 
-| Package              | Directory                                                      | Purpose                                                         |
-| -------------------- | -------------------------------------------------------------- | --------------------------------------------------------------- |
-| `oc-openai-daybreak` | [packages/openai-daybreak](packages/openai-daybreak/README.md) | Per-session `/daybreak blue\|red\|standard` controls for OpenAI |
+| Package                  | Directory                                                              | Purpose                                                         |
+| ------------------------ | ---------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `oc-openai-daybreak`     | [packages/openai-daybreak](packages/openai-daybreak/README.md)         | Per-session `/daybreak blue\|red\|standard` controls for OpenAI |
+| `oc-understand-anything` | [packages/understand-anything](packages/understand-anything/README.md) | Understand Anything commands, workers, and opt-in graph updates |
 
 No packages have been published to npm yet. Use the local installation below.
 See each plugin's README for its OpenCode compatibility and access requirements.
@@ -51,14 +52,15 @@ settings remain associated with the same plugin.
 ```text
 opencode-plugins/
 ├── packages/
-│   └── openai-daybreak/
-│       ├── package.json       # Plugin identity, dependencies, exports, scripts
-│       ├── README.md          # Plugin-specific setup and behavior
-│       ├── LICENSE           # Included in the standalone package
-│       ├── src/
-│       ├── test/
-│       ├── tsconfig.json
-│       └── tsconfig.test.json
+│   ├── openai-daybreak/
+│   │   ├── package.json       # Plugin identity, dependencies, exports, scripts
+│   │   ├── README.md          # Plugin-specific setup and behavior
+│   │   ├── LICENSE           # Included in the standalone package
+│   │   ├── src/
+│   │   ├── test/
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.test.json
+│   └── understand-anything/   # UA adapter; same package structure
 ├── package.json              # Private workspace root and shared dev tools
 ├── package-lock.json         # Single lockfile for every workspace
 ├── tsconfig.base.json        # Shared TypeScript compiler options

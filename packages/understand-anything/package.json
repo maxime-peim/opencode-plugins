@@ -1,0 +1,36 @@
+{
+  "name": "oc-understand-anything",
+  "version": "0.1.0",
+  "description": "Understand Anything commands, workers, and automatic updates for OpenCode V2",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maxime-peim/opencode-plugins.git",
+    "directory": "packages/understand-anything"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "test": "tsx --test test/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@opencode/plugin": "~2.2.5"
+  }
+}
